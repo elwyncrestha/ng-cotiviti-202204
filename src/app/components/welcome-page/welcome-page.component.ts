@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-welcome-page',
@@ -7,9 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class WelcomePageComponent implements OnInit {
   @Input() username = '';
-  constructor() { }
+
+  constructor(private readonly router: Router) {
+  }
 
   ngOnInit(): void {
+  }
+
+  routeToInventory(): void {
+    this.router.navigate(['/inventories']);
   }
 
 }
