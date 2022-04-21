@@ -81,12 +81,12 @@ Angular - What is Angular?
 * Redirecting routes
 * Nested children routes
 * Passing data through routes
-* Lazy-loaded routes or modules
 
 ---
 
 ## Day 3
 
+* Lazy-loaded routes or modules
 * Angular Service and Dependency Injection
 * Inbuilt Pipes (Async pipe)
 * RxJS: Subject, Behavioral Subject, Observable and Subscription
