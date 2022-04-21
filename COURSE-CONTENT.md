@@ -80,6 +80,7 @@ Angular - What is Angular?
 * Angular Routing Module
 * Redirecting routes
 * Nested children routes
+* Passing data through routes
 * Lazy-loaded routes or modules
 
 ---

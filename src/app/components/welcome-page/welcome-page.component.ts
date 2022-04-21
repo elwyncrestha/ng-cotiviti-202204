@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./welcome-page.component.scss']
 })
 export class WelcomePageComponent implements OnInit {
-  @Input() username = '';
+  @Input() username = 'Jane Doe';   // TODO: Replace with dynamic value.
 
   constructor(private readonly router: Router) {
   }
@@ -16,7 +16,14 @@ export class WelcomePageComponent implements OnInit {
   }
 
   routeToInventory(): void {
-    this.router.navigate(['/inventories']);
+    this.router.navigate(['/inventories'], {
+      state: {
+        username: this.username,
+      },
+      queryParams: {
+        userId: 123
+      }
+    });
   }
 
 }

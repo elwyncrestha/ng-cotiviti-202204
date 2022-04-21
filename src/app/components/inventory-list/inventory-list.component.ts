@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-inventory-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventoryListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(history.state);
+    console.log(this.activatedRoute.snapshot.queryParams['userId']);
+    console.log(this.activatedRoute.snapshot.queryParamMap.get('userId'));
   }
 
 }
