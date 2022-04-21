@@ -64,3 +64,58 @@ Angular - What is Angular?
 * Template Interpolation {{}}
 
 ---
+
+## Day 2
+
+* Angular Template Syntax
+  * `*ngFor`
+  * `*ngIf`
+  * `*ngSwitchCase`
+* Property Binding [prop]
+* Event Binding (event)
+* Nesting Components
+  * Parent-child communication using @Input decorator
+  * Child-parent communication using @Output decorator
+* Angular Module
+* Angular Routing Module
+* Redirecting routes
+* Nested children routes
+* Lazy-loaded routes or modules
+
+---
+
+## Day 3
+
+* Angular Service and Dependency Injection
+* Inbuilt Pipes (Async pipe)
+* RxJS: Subject, Behavioral Subject, Observable and Subscription
+* HttpClientModule
+  * Fetching the mock data
+  * Fetching data from the server
+
+---
+
+## Day 4
+
+* Template-driven form: FormsModule
+* Reactive form: ReactiveFormsModule
+  * AbstractControl
+  * FormGroup
+  * FormControl
+  * FormArray
+  * FormBuilder
+
+---
+
+## Day 5
+
+* Ng-container
+* Ng-template
+* Ng-content
+* Route guards
+* Http Interceptors
+* State Management with NgRx Intro
+
+## Day 6
+
+* NgRx application | [Go through NgRx implementation from this repo](https://github.com/elwyncrestha/ng-batch202108)

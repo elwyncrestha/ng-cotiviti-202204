@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-cotiviti-202204';
+  username = 'Jane Doe';
 
   constructor() {}
 }

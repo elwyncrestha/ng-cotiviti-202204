@@ -1,2 +1,5 @@
-<app-header></app-header>
+<app-header [name]="username" (nameChangeEmitter)="username = $event"></app-header>
+<div class="p-3">
+  <h4>Hello {{ username }}</h4>
+</div>
 <app-footer></app-footer>
