@@ -25,6 +25,8 @@
   * `ng serve --port 4201` or `ng s --port 4201`
 * Generate a component
   * `ng generate component <component name>` or `ng g c <component name>`
+* Generate a module
+  * `ng generate module <module name>` or `ng g m <module name>`
 
 ---
 
