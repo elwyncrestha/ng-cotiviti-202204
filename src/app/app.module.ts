@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { LayoutModule } from './modules/layout/layout.module';
+import { InventoryListComponent } from './components/inventory-list/inventory-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    InventoryListComponent
   ],
   imports: [
     BrowserModule,
