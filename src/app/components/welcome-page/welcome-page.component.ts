@@ -16,14 +16,7 @@ export class WelcomePageComponent implements OnInit {
   }
 
   routeToInventory(): void {
-    this.router.navigate(['/inventories'], {
-      state: {
-        username: this.username,
-      },
-      queryParams: {
-        userId: 123
-      }
-    });
+    this.router.navigate(['/inventories']);
   }
 
 }

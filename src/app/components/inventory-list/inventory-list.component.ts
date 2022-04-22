@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+import { INVENTORY_LIST } from './inventory.constant';
+import { Inventory } from './inventory.model';
 
 @Component({
   selector: 'app-inventory-list',
@@ -7,13 +8,11 @@ import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
   styleUrls: ['./inventory-list.component.scss']
 })
 export class InventoryListComponent implements OnInit {
+  inventoryList: Inventory[] = INVENTORY_LIST;
 
-  constructor(private readonly activatedRoute: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(): void {
-    console.log(history.state);
-    console.log(this.activatedRoute.snapshot.queryParams['userId']);
-    console.log(this.activatedRoute.snapshot.queryParamMap.get('userId'));
   }
 
 }
