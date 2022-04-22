@@ -81,13 +81,16 @@ Angular - What is Angular?
 * Angular Module
 * Angular Routing Module
 * Redirecting routes
-* Nested children routes
 * Passing data through routes
+  * state
+  * queryParams
+  * params
 
 ---
 
 ## Day 3
 
+* Nested children routes
 * Lazy-loaded routes or modules
 * Angular Service and Dependency Injection
 * Inbuilt Pipes (Async pipe)
@@ -118,6 +121,8 @@ Angular - What is Angular?
 * Route guards
 * Http Interceptors
 * State Management with NgRx Intro
+
+---
 
 ## Day 6
 
