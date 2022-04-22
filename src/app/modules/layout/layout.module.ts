@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
+import { LoggerService } from 'src/app/services/logger.service';
 
 
 
@@ -18,6 +19,7 @@ import { RouterModule } from '@angular/router';
   exports: [
     HeaderComponent,
     FooterComponent,
-  ]
+  ],
+  providers: [LoggerService]
 })
 export class LayoutModule { }

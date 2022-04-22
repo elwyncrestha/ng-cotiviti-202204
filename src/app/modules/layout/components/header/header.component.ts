@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouteConstants } from 'src/app/constants/routes.constant';
+import { LoggerService } from 'src/app/services/logger.service';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,9 @@ export class HeaderComponent implements OnInit {
   showUsername = true;
   RouteConstants = RouteConstants;
 
-  constructor() { }
+  constructor(
+    private readonly loggerService: LoggerService
+  ) { }
 
   ngOnInit(): void {
   }

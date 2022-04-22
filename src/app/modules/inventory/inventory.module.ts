@@ -5,6 +5,7 @@ import { InventoryRoutingModule } from './inventory-routing.module';
 import { InventoryFormComponent } from './components/inventory-form/inventory-form.component';
 import { InventoryListComponent } from './components/inventory-list/inventory-list.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
+import { LoggerService } from 'src/app/services/logger.service';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { InventoryComponent } from './components/inventory/inventory.component';
   imports: [
     CommonModule,
     InventoryRoutingModule
-  ]
+  ],
+  providers: [LoggerService]
 })
 export class InventoryModule { }
