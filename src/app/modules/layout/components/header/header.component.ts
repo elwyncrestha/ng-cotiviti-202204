@@ -15,7 +15,9 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private readonly loggerService: LoggerService
-  ) { }
+  ) {
+    console.log('HeaderComponent constructed!');
+  }
 
   ngOnInit(): void {
   }
