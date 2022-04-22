@@ -1,8 +1,7 @@
-<div class="p-5 mb-4 bg-light rounded-3">
-  <div class="container-fluid py-5">
-    <h1 class="display-5 fw-bold">List of {{'inventories' | titlecase}}</h1>
+<div class="mb-1 bg-light rounded-3">
+  <div class="container-fluid py-1">
+    <h4 class="display-5 fw-bold">List of {{ "inventories" | titlecase }}</h4>
     <p class="col-md-8 fs-4">Find various inventories</p>
-    <button class="btn btn-outline-primary btn-lg" type="button">Edit Inventories</button>
 
     <div class="p-2">
       <table class="table table-striped">
@@ -12,6 +11,15 @@
             <th scope="col">Name</th>
             <th scope="col">Quantity</th>
             <th scope="col">Price</th>
+            <th scope="col">
+              <button
+                (click)="enableEdit = !enableEdit"
+                class="btn btn-outline-primary btn-sm"
+                type="button"
+              >
+                {{ enableEdit ? "Disable" : "Enable" }} Edit
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -20,6 +28,13 @@
             <td>{{ inventory.name }}</td>
             <td>{{ inventory.quantity }}</td>
             <td>{{ inventory.price | currency }}</td>
+            <td *ngIf="enableEdit; else na">
+              <button type="button" class="btn btn-warning btn-sm">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm mx-1">Delete</button>
+            </td>
+            <ng-template #na>
+              <td>N/A</td>
+            </ng-template>
           </tr>
         </tbody>
       </table>

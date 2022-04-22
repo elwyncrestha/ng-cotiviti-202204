@@ -9,6 +9,7 @@ import { Inventory } from './inventory.model';
 })
 export class InventoryListComponent implements OnInit {
   inventoryList: Inventory[] = INVENTORY_LIST;
+  enableEdit = false;
 
   constructor() { }
 
