@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouteConstants } from 'src/app/constants/routes.constant';
 
 @Component({
   selector: 'app-welcome-page',
@@ -16,7 +17,7 @@ export class WelcomePageComponent implements OnInit {
   }
 
   routeToInventory(): void {
-    this.router.navigate(['/inventories']);
+    this.router.navigate([RouteConstants.INVENTORY_LIST]);
   }
 
 }
