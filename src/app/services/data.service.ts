@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,7 @@ export class DataService {
   readonly username$: Observable<string>;
 
   constructor() {
-    this._authenticatedUsername = new Subject<string>();
+    this._authenticatedUsername = new BehaviorSubject<string>('Jane Doe');
     this.username$ = this._authenticatedUsername.asObservable();
   }
 
