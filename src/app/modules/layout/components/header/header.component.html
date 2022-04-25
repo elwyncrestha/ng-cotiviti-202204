@@ -22,7 +22,7 @@
     </ul>
     <form class="d-flex align-items-center">
       <label *ngIf="showUsername; else control" class="me-2 text-white"
-        ><strong>{{ dsvc.username$ | async }}</strong></label
+        ><strong>{{ dsvc.username.data$ | async }}</strong></label
       >
       <ng-template #control>
         <input
@@ -30,7 +30,7 @@
           type="search"
           placeholder="Name"
           aria-label="Name"
-          [value]="dsvc.username$ | async"
+          [value]="dsvc.username.data$ | async"
           (change)="onNameChange($event)"
         />
       </ng-template>
