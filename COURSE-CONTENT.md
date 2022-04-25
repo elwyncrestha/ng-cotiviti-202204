@@ -95,6 +95,11 @@ Angular - What is Angular?
 * Nested children routes
 * Lazy-loaded routes or modules
 * Angular Service and Dependency Injection
+
+---
+
+## Day 4
+
 * Inbuilt Pipes (Async pipe)
 * RxJS: Subject, Behavioral Subject, Observable and Subscription
 * HttpClientModule
@@ -103,7 +108,7 @@ Angular - What is Angular?
 
 ---
 
-## Day 4
+## Day 5
 
 * Template-driven form: FormsModule
 * Reactive form: ReactiveFormsModule
@@ -112,11 +117,6 @@ Angular - What is Angular?
   * FormControl
   * FormArray
   * FormBuilder
-
----
-
-## Day 5
-
 * Ng-container
 * Ng-template
 * Ng-content
