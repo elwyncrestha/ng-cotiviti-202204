@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  SERVER_URL: 'http://localhost:4201/assets/json'
+  SERVER_URL: 'http://localhost:8080',
+  MOCK_SERVER_URL: 'http://localhost:4201/assets/json'
 };
 
 /*

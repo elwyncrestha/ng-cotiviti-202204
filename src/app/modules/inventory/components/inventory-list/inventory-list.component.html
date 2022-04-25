@@ -23,19 +23,28 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let inventory of inventoryList$ | async; let i = index">
-            <th scope="row">{{ i + 1 }}</th>
-            <td>{{ inventory.name }}</td>
-            <td>{{ inventory.quantity }}</td>
-            <td>{{ inventory.price | currency }}</td>
-            <td *ngIf="enableEdit; else na">
-              <button type="button" class="btn btn-warning btn-sm">Edit</button>
-              <button type="button" class="btn btn-danger btn-sm mx-1">Delete</button>
-            </td>
-            <ng-template #na>
-              <td>N/A</td>
-            </ng-template>
-          </tr>
+          <ng-container *ngIf="(inventoryList$ | async) as inventories">
+            <ng-container *ngIf="inventories.length < 1; else dataTemplate">
+              <tr>
+                <td colspan="5">No inventories</td>
+              </tr>
+            </ng-container>
+          </ng-container>
+          <ng-template #dataTemplate>
+            <tr *ngFor="let inventory of inventoryList$ | async; let i = index">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ inventory.name }}</td>
+              <td>{{ inventory.quantity }}</td>
+              <td>{{ inventory.price | currency }}</td>
+              <td *ngIf="enableEdit; else na">
+                <button type="button" class="btn btn-warning btn-sm">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm mx-1">Delete</button>
+              </td>
+              <ng-template #na>
+                <td>N/A</td>
+              </ng-template>
+            </tr>
+          </ng-template>
         </tbody>
       </table>
     </div>
