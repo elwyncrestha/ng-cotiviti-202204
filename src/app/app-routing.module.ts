@@ -16,10 +16,6 @@ const routes: Routes = [
     path: 'inventory',
     loadChildren: () => import('./modules/inventory/inventory.module').then(m => m.InventoryModule)
   },
-  {
-    path: '**',
-    redirectTo: 'welcome'
-  },
 ];
 
 @NgModule({

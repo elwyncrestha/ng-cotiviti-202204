@@ -1,6 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { LoggerService } from 'src/app/services/logger.service';
-import { INVENTORY_LIST } from './inventory.constant';
+import { InventoryService } from '../../services/inventory.service';
 import { Inventory } from './inventory.model';
 
 @Component({
@@ -9,19 +10,15 @@ import { Inventory } from './inventory.model';
   styleUrls: ['./inventory-list.component.scss'],
   providers: [LoggerService]
 })
-export class InventoryListComponent implements OnInit, OnDestroy {
-  inventoryList: Inventory[] = INVENTORY_LIST;
+export class InventoryListComponent implements OnInit {
+  inventoryList$!: Observable<Inventory[]>;
   enableEdit = false;
 
-  constructor(private readonly loggerService: LoggerService) {
-    console.log('InventoryListComponent constructed!');
+  constructor(private readonly loggerService: LoggerService, private readonly inventoryService: InventoryService) {
   }
 
   ngOnInit(): void {
-  }
-
-  ngOnDestroy(): void {
-    console.log('InventoryListComponent destroyed!');
+    this.inventoryList$ = this.inventoryService.fetchInventories();
   }
 
 }
