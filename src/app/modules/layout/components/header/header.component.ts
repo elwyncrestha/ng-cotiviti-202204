@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouteConstants } from 'src/app/constants/routes.constant';
+import { DataService } from 'src/app/services/data.service';
 import { LoggerService } from 'src/app/services/logger.service';
 
 @Component({
@@ -8,22 +9,20 @@ import { LoggerService } from 'src/app/services/logger.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() name = 'John Doe';
-  @Output() nameChangeEmitter = new EventEmitter<string>();
   showUsername = true;
   RouteConstants = RouteConstants;
 
   constructor(
-    private readonly loggerService: LoggerService
+    private readonly loggerService: LoggerService,
+    readonly dsvc: DataService
   ) {
-    console.log('HeaderComponent constructed!');
   }
 
   ngOnInit(): void {
   }
 
   onNameChange(e: any): void {
-    this.nameChangeEmitter.emit(e.target.value);
+    this.dsvc.setUsername(e.target.value);
   }
 
 }

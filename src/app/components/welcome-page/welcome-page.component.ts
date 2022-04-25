@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { RouteConstants } from 'src/app/constants/routes.constant';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -8,16 +8,12 @@ import { RouteConstants } from 'src/app/constants/routes.constant';
   styleUrls: ['./welcome-page.component.scss']
 })
 export class WelcomePageComponent implements OnInit {
-  @Input() username = 'Jane Doe';   // TODO: Replace with dynamic value.
+  RouteConstants = RouteConstants;
 
-  constructor(private readonly router: Router) {
+  constructor(readonly dsvc: DataService) {
   }
 
   ngOnInit(): void {
-  }
-
-  routeToInventory(): void {
-    this.router.navigate([RouteConstants.INVENTORY_LIST]);
   }
 
 }

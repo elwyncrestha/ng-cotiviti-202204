@@ -3,18 +3,44 @@
     <a class="navbar-brand">Inventory Management System</a>
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link" aria-current="page" routerLink="/welcome" routerLinkActive="active">Home</a>
+        <a
+          class="nav-link"
+          aria-current="page"
+          routerLink="/welcome"
+          routerLinkActive="active"
+          >Home</a
+        >
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="RouteConstants.INVENTORY" routerLinkActive="active">Inventories</a>
+        <a
+          class="nav-link"
+          [routerLink]="RouteConstants.INVENTORY"
+          routerLinkActive="active"
+          >Inventories</a
+        >
       </li>
     </ul>
     <form class="d-flex align-items-center">
-      <label *ngIf="showUsername; else control" class="me-2 text-white"><strong>{{ name }}</strong></label>
+      <label *ngIf="showUsername; else control" class="me-2 text-white"
+        ><strong>{{ dsvc.username$ | async }}</strong></label
+      >
       <ng-template #control>
-        <input class="form-control me-2" type="search" placeholder="Name" aria-label="Name" [value]="name" (change)="onNameChange($event)">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Name"
+          aria-label="Name"
+          [value]="dsvc.username$ | async"
+          (change)="onNameChange($event)"
+        />
       </ng-template>
-      <button (click)="showUsername = !showUsername" class="btn btn-outline-light" type="button">Edit</button>
+      <button
+        (click)="showUsername = !showUsername"
+        class="btn btn-outline-light"
+        type="button"
+      >
+        Edit
+      </button>
     </form>
   </div>
 </nav>

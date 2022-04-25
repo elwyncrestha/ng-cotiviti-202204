@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +6,7 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  username: string;
 
-  constructor(private readonly dataService: DataService) {
-    this.username = this.dataService.authenticatedUsername;
+  constructor() {
   }
 }

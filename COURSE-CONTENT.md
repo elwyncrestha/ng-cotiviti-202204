@@ -27,6 +27,8 @@
   * `ng generate component <component name>` or `ng g c <component name>`
 * Generate a module
   * `ng generate module <module name>` or `ng g m <module name>`
+* Generate a service
+  * `ng generate service <service name>` or `ng g s <service name>`
 
 ---
 
