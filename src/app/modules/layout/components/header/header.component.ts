@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onNameChange(e: any): void {
-    this.dsvc.setUsername(e.target.value);
+    this.dsvc.username.setValue(e.target.value);
   }
 
 }

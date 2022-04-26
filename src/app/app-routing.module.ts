@@ -5,7 +5,7 @@ import { WelcomePageComponent } from './components/welcome-page/welcome-page.com
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'welcome-page',
+    redirectTo: 'welcome',
     pathMatch: 'full'
   },
   {
@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'inventory',
     loadChildren: () => import('./modules/inventory/inventory.module').then(m => m.InventoryModule)
   },
+  {
+    path: '**',
+    redirectTo: 'welcome'
+  }
 ];
 
 @NgModule({

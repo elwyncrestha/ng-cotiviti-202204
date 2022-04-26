@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getUser().subscribe((user) => {
-      this.dsvc.setUsername(user.name);
+      this.dsvc.username.setValue(user.name);
     });
   }
 }

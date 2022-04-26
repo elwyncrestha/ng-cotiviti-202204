@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { DataStore } from '../model/data-store';
 
 @Injectable({
@@ -11,9 +10,5 @@ export class DataService {
 
   constructor() {
     this.username = new DataStore<string>('Jane Doe');
-  }
-
-  setUsername(username: string): void {
-    this.username.setValue(username);
   }
 }
