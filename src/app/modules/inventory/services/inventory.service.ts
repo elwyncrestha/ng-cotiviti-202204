@@ -4,16 +4,22 @@ import { catchError, Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Inventory } from '../components/inventory-list/inventory.model';
 
+const INVENTORY_URL = `${environment.SERVER_URL}/v1/inventory`;
+
 @Injectable()
 export class InventoryService {
   constructor(private readonly http: HttpClient) {}
 
   fetchInventories(): Observable<Inventory[]> {
     return this.http
-      .get<Inventory[]>(`${environment.SERVER_URL}/v1/inventory`)
+      .get<Inventory[]>(INVENTORY_URL)
       .pipe(catchError((err) => {
         console.error(err);
         return of([]);
       }));
+  }
+
+  save(inventory: Inventory): Observable<Inventory> {
+    return this.http.post<Inventory>(INVENTORY_URL, inventory);
   }
 }
