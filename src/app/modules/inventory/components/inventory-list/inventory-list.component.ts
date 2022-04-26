@@ -8,17 +8,28 @@ import { Inventory } from './inventory.model';
   selector: 'app-inventory-list',
   templateUrl: './inventory-list.component.html',
   styleUrls: ['./inventory-list.component.scss'],
-  providers: [LoggerService]
+  providers: [LoggerService],
 })
 export class InventoryListComponent implements OnInit {
   inventoryList$!: Observable<Inventory[]>;
   enableEdit = false;
 
-  constructor(private readonly loggerService: LoggerService, private readonly inventoryService: InventoryService) {
-  }
+  constructor(
+    private readonly loggerService: LoggerService,
+    private readonly inventoryService: InventoryService
+  ) {}
 
   ngOnInit(): void {
-    this.inventoryList$ = this.inventoryService.fetchInventories();
+    this.fetchData();
   }
 
+  deleteInventory(id: number): void {
+    this.inventoryService.delete(id).subscribe({
+      complete: () => this.fetchData(),
+    });
+  }
+
+  private fetchData(): void {
+    this.inventoryList$ = this.inventoryService.fetchInventories();
+  }
 }

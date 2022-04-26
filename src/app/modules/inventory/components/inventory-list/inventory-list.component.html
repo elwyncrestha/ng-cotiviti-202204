@@ -38,7 +38,7 @@
               <td>{{ inventory.price | currency }}</td>
               <td *ngIf="enableEdit; else na">
                 <button type="button" class="btn btn-warning btn-sm">Edit</button>
-                <button type="button" class="btn btn-danger btn-sm mx-1">Delete</button>
+                <button (click)="deleteInventory(inventory.id)" type="button" class="btn btn-danger btn-sm mx-1">Delete</button>
               </td>
               <ng-template #na>
                 <td>N/A</td>
