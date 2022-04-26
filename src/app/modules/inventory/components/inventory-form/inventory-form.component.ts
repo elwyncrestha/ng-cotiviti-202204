@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoggerService } from 'src/app/services/logger.service';
 
 @Component({
@@ -7,17 +8,28 @@ import { LoggerService } from 'src/app/services/logger.service';
   styleUrls: ['./inventory-form.component.scss'],
   providers: [LoggerService]
 })
-export class InventoryFormComponent implements OnInit, OnDestroy {
+export class InventoryFormComponent implements OnInit {
+
+  action: 'Add' | 'Edit' = 'Add';
+  form!: FormGroup;
 
   constructor(private readonly loggerService: LoggerService) {
-    console.log('InventoryFormComponent constructed!');
   }
 
   ngOnInit(): void {
+    this.buildForm();
   }
 
-  ngOnDestroy(): void {
-    console.log('InventoryFormComponent destroyed!');
+  onSubmit(): void {
+    console.log(this.form.value);
+  }
+
+  private buildForm(): void {
+    this.form = new FormGroup({
+      name: new FormControl('', Validators.required),
+      quantity: new FormControl('', Validators.required),
+      price: new FormControl('', Validators.required),
+    });
   }
 
 }
