@@ -22,6 +22,10 @@ const routes: Routes = [
         path: 'form',
         component: InventoryFormComponent
       },
+      {
+        path: 'form/:id',
+        component: InventoryFormComponent
+      },
     ]
   }
 ];

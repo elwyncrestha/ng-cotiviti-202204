@@ -19,6 +19,10 @@ export class InventoryService {
       }));
   }
 
+  fetchById(id: number): Observable<Inventory> {
+    return this.http.get<Inventory>(`${INVENTORY_URL}/${id}`);
+  }
+
   save(inventory: Inventory): Observable<Inventory> {
     return this.http.post<Inventory>(INVENTORY_URL, inventory);
   }

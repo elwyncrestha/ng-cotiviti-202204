@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
-  FormControl,
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RouteConstants } from 'src/app/constants/routes.constant';
 import { LoggerService } from 'src/app/services/logger.service';
 import { InventoryService } from '../../services/inventory.service';
@@ -24,11 +23,13 @@ export class InventoryFormComponent implements OnInit {
     private readonly loggerService: LoggerService,
     private readonly fb: FormBuilder,
     private readonly inventoryService: InventoryService,
-    private readonly router: Router
+    private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.buildForm();
+    this.checkIfInventoryIdExists();
   }
 
   onSubmit(): void {
@@ -39,9 +40,22 @@ export class InventoryFormComponent implements OnInit {
 
   private buildForm(): void {
     this.form = this.fb.group({
+      id: [],
       name: ['', Validators.required],
       quantity: ['', Validators.required],
       price: ['', Validators.required],
+    });
+  }
+
+  private checkIfInventoryIdExists(): void {
+    const inventoryId = this.activatedRoute.snapshot.paramMap.get('id');
+    if (!inventoryId) {
+      return;
+    }
+
+    this.action = 'Edit';
+    this.inventoryService.fetchById(Number(inventoryId)).subscribe({
+      next: (inventory) => this.form.patchValue(inventory),
     });
   }
 }
