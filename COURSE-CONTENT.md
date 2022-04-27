@@ -122,6 +122,7 @@ Angular - What is Angular?
 * Ng-content
 * Route guards
 * Http Interceptors
+* [Go through Route guards and Http Interceptors implementation from this repo](https://github.com/elwyncrestha/ng-rms)
 * State Management with NgRx Intro
 
 ---
